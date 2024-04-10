@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+/* You can add global styles to this file, and also import other style files */
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Fix for class mat-elevation-zx not having any effect
+// https://github.com/angular/components/issues/26094#issuecomment-1490245622
+@for $i from 0 through 24 {
+  .mat-mdc-card.mat-elevation-z#{$i} {
+    @include mat.elevation($i);
+  }
+}
