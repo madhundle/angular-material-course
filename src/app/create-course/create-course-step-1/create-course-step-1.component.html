@@ -1,5 +1,60 @@
 <div [formGroup]="form" class="course-details-form">
 
+  <!-- Course Title -- Input -->
+  <mat-form-field floatLabel="auto"> 
+    <mat-label>Course Title</mat-label>
+    <input matInput formControlName="title" #title>
+    <mat-hint align="end">{{ title.value.length }} / 60</mat-hint>
+    <mat-error *ngIf="courseTitle.errors?.minlength">
+      A minimum length of 5 characters is required.</mat-error>
+  </mat-form-field>
+  
+  <mat-form-field floatLabel="auto" id="fixex">
+    <mat-label>Prefix Suffix Example</mat-label>
+    <input matInput>
+    <span matPrefix>Prefix</span>
+    <span matSuffix>Suffix</span>
+  </mat-form-field>
+
+  <!-- Course Type -- Radio Buttons -->
+  <mat-radio-group class="course-type" formControlName="category">
+    <mat-radio-button value="free" [disabled]="true">Free</mat-radio-button>
+    <mat-radio-button value="premium">Premium</mat-radio-button>
+  </mat-radio-group>
+
+  <!-- Category -- Select Dropdown -->
+  <mat-form-field appearance="outline" floatLabel="auto">
+    <mat-label>Category</mat-label>
+
+    <!-- You can make multiple selections with the directive 'multiple' -->
+    <!-- In the ts, the form's 'category' would need to be an array -->
+    <!-- <mat-select formControlName="category" multiple> -->
+    <mat-select formControlName="category">
+      <!-- You can list options with no value, if the field is not required -->
+      <!-- <mat-option>None</mat-option> -->
+      
+      <mat-optgroup label="Beginner">
+        <mat-option value="newprogramming">New to Programming</mat-option>
+        <mat-option value="newjavascript">New to Javascript</mat-option>
+        <mat-option value="newangular">New to Angular</mat-option>
+      </mat-optgroup>
+      
+      <!-- <mat-option value="BEGINNER">Beginner</mat-option> -->
+      <mat-option value="INTERMEDIATE">Intermediate</mat-option>
+      <mat-option value="ADVANCED">Advanced</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Release Date -- Date Picker -->
+  <mat-form-field appearance="outline" floatLabel="auto">
+    <mat-label>Release Date</mat-label>
+    <input matInput formControlName="releasedAt">
+    <mat-datepicker>
+      
+    </mat-datepicker>
+  </mat-form-field>
+
 
 </div>
 

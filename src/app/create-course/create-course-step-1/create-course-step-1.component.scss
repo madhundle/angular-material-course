@@ -9,3 +9,23 @@
   margin-bottom: 15px;
 }
 
+// Attempts to get the prefix and suffix aligned with the input
+// None of these work
+
+// #fixex * {
+// display: inline-flex;
+// align-items: center;
+// }
+
+// .mat-mdc-form-field-icon-prefix * {
+//   color: blue;
+// }
+//   font-weight: !important bold;
+
+// .mat-mdc-form-field-icon-prefix span {
+//   color: lightblue;
+// }
+
+mat-radio-button {
+  margin-right: 5px;
+}

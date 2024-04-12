@@ -46,9 +46,9 @@ Once the backend server is up and running, we can now run our frontend server.
 
 To run the frontend part of our code, we will use the Angular CLI:
 
-    npm start 
+    npm start [-- --port 5000]
 
-The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
+The application is visible at port 4200 unless otherwise specified: [http://localhost:4200](http://localhost:4200)
 
 Note: **make sure to use command npm start and not ng serve, as npm start adds a couple extra options that are needed for our project **
 

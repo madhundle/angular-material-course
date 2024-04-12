@@ -1,5 +1,3 @@
-
-
 import {Request, Response} from 'express';
 import {COURSES} from "./db-data";
 
