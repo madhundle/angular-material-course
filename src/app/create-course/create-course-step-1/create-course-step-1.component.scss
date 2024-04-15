@@ -9,7 +9,12 @@
   margin-bottom: 15px;
 }
 
-// Attempts to get the prefix and suffix aligned with the input
+.course-downloads {
+  margin-bottom: 15px;
+}
+
+// Attempts to get the prefix and suffix aligned with the input, 
+// on the bottom of the line
 // None of these work
 
 // #fixex * {
@@ -28,4 +33,10 @@
 
 mat-radio-button {
   margin-right: 5px;
+}
+
+// Must use ng-deep and .mat-calendar-body-cell for this to be applied
+// Could be placed in styles.scss to be applied globally?
+::ng-deep .mat-calendar-body-cell.highlight-date {
+  background: lightcoral;
 }

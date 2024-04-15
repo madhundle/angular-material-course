@@ -47,14 +47,27 @@
   </mat-form-field>
 
   <!-- Release Date -- Date Picker -->
-  <mat-form-field appearance="outline" floatLabel="auto">
+  <mat-form-field appearance="outline">
     <mat-label>Release Date</mat-label>
-    <input matInput formControlName="releasedAt">
-    <mat-datepicker>
-      
-    </mat-datepicker>
+    <input matInput formControlName="releasedAt" [matDatepicker]="releasedAtDatepicker">
+    <mat-datepicker-toggle matSuffix [for]="releasedAtDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #releasedAtDatepicker [dateClass]="dateClass"></mat-datepicker>
   </mat-form-field>
 
+  <!-- Downloads Allowed -- Checkbox -->
+  <mat-checkbox color="primary" formControlName="downloadsAllowed" class="course-downloads">
+    <!-- [disabled]="true" and [indeterminate]="true" are also available options -->
+    Downloads Allowed?
+  </mat-checkbox>
+
+  <!-- Long Description -- Textarea -->
+  <mat-form-field appearance="outline">
+    <mat-label>Course Description</mat-label>
+    <textarea matInput formControlName="longDescription" 
+      cdkTextareaAutosize 
+      [cdkAutosizeMinRows]="2" 
+      [cdkAutosizeMaxRows]="6"></textarea>
+  </mat-form-field>
 
 </div>
 
