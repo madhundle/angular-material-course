@@ -1,9 +1,11 @@
 <mat-sidenav-container fullscreen>
+  
   <!-- Side Navigation -->
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
       <a mat-list-item routerLink="/"><mat-icon>library_books</mat-icon><span>Courses</span></a>
-      <a mat-list-item routerLink="/about"><mat-icon>question_answer</mat-icon><span>About</span></a>
+      <a mat-list-item routerLink="about"><mat-icon>question_answer</mat-icon><span>About</span></a>
+      <a mat-list-item routerLink="drag-drop-example"><mat-icon>drag_indicator</mat-icon><span>Drag and Drop</span></a>
       <a mat-list-item><mat-icon>person_add</mat-icon><span>Register</span></a>
       <a mat-list-item><mat-icon>account_circle</mat-icon><span>Login</span></a>
     </mat-nav-list>
@@ -20,7 +22,7 @@
     <a mat-button [matMenuTriggerFor]="dropdownScreens">Screens</a>
     <mat-menu #dropdownScreens>
       <button mat-menu-item routerLink="/">Courses</button>
-      <button mat-menu-item routerLink="/about">About</button>
+      <button mat-menu-item routerLink="about">About</button>
     </mat-menu>
 
     <a mat-button><mat-icon>person_add</mat-icon>Register</a>

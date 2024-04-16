@@ -1,5 +1,4 @@
-
->>> body {
+body {
     margin: 0;
 }
 
@@ -11,3 +10,29 @@ mat-toolbar a {
   color: white;
 }
 
+/* Trying to get the icons and spans vertically aligned */
+/* None of this worked */
+/* mat-sidenav mat-nav-list mat-list-item { */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-wrap: nowrap; */
+/* } */
+
+mat-sidenav mat-nav-list mat-icon {
+  /* display: flex; */
+  /* margin-top: 16px; */
+  margin-right: 8px;
+  /* align-self: bottom; */
+  /* flex-wrap: nowrap; */
+  /* background-color: blue; */
+
+}
+
+/* mat-sidenav mat-nav-list span { */
+  /* display: flex; */
+  /* display: inline-block; */
+  /* padding-bottom: 8px; */
+  /* margin-bottom: 16px; */
+  /* background-color: brown; */
+/* } */

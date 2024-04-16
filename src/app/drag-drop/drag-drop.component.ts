@@ -90,4 +90,25 @@ export class DragDropComponent {
     }
   ];
 
+  done = [];
+
+  drop(event: CdkDragDrop<Lesson[]>) {
+    // Event provides a previous and current index from drop operation
+    console.log("prev idx: ", event.previousIndex);
+    console.log("curr idx: ", event.currentIndex);
+    // Angular Material has a utility for moving the item in our array
+    moveItemInArray(this.lessons, event.previousIndex, event.currentIndex);
+  }
+
+  dropMultiList(event: CdkDragDrop<Lesson[]>) {
+    // dragging and dropping in same container
+    if(event.previousContainer == event.container) {
+      this.drop(event);
+    } 
+    // dropping into different container
+    else {
+      transferArrayItem(event.previousContainer.data, event.container.data, 
+                        event.previousIndex, event.currentIndex);
+    }
+  }
 }
