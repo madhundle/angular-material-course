@@ -18,11 +18,13 @@
 
   <!-- Tab Group area for Beginner Courses and Advanced Courses -->
   <mat-tab-group>
+
+    <!-- Tab for Beginner courses card list -->
     <mat-tab label="Beginners">
-      <!-- Material Card for Beginner courses card list -->
       <courses-card-list [courses]="beginnerCourses$ | async"></courses-card-list>
     </mat-tab>
-    <!-- Material Card for Advanced courses card list -->
+
+    <!-- Tab for Advanced courses card list -->
     <mat-tab label="Advanced">
       <courses-card-list [courses]="advancedCourses$ | async"></courses-card-list>
     </mat-tab>

@@ -5,20 +5,49 @@ import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import * as moment from 'moment';
 
 @Component({
-    selector: 'course-dialog',
-    templateUrl: './course-dialog.component.html',
-    styleUrls: ['./course-dialog.component.css']
+  selector: 'course-dialog',
+  templateUrl: './course-dialog.component.html',
+  styleUrls: ['./course-dialog.component.css']
 })
 export class CourseDialogComponent implements OnInit {
 
-    constructor(private fb: FormBuilder) {
+  description: string;
 
+  form = this.fb.group({
+    description: [this.course.description, Validators.required],
+    category: [this.course.category, Validators.required],
+    releasedAt: [new Date(), Validators.required],
+    longDescription: [this.course.longDescription, Validators.required]
+  });
 
-    }
+  constructor(private fb: FormBuilder, 
+              @Inject(MAT_DIALOG_DATA) private course: Course,
+              private dialogRef: MatDialogRef<CourseDialogComponent>) {
 
-    ngOnInit() {
+    this.description = course.description;
+  }
 
-    }
+  ngOnInit() {}
 
+  close() {
+    this.dialogRef.close();
+  }
+
+  save() {
+    // Value will be emitted at .afterClosed(), so observers will receive it
+    this.dialogRef.close(this.form.value);
+  }
+
+}
+
+export function openEditCourseDialog(dialog: MatDialog, course: Course) {
+  const config = new MatDialogConfig();
+  config.disableClose = true; // won't close on Esc or clicking elsewhere
+  config.autoFocus = true;
+  config.data = { ...course };
+  
+  const dialogRef = dialog.open(CourseDialogComponent, config);
+  // returns an observable callers can subscribe to
+  return dialogRef.afterClosed(); 
 }
 
