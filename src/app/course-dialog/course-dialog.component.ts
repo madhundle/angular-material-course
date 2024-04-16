@@ -45,6 +45,8 @@ export function openEditCourseDialog(dialog: MatDialog, course: Course) {
   config.disableClose = true; // won't close on Esc or clicking elsewhere
   config.autoFocus = true;
   config.data = { ...course };
+  config.panelClass = "modal-panel";
+  // config.backdropClass = "backdrop-modal-panel"; // 
   
   const dialogRef = dialog.open(CourseDialogComponent, config);
   // returns an observable callers can subscribe to
