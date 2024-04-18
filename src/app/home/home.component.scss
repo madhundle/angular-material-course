@@ -12,9 +12,10 @@
 }
 
 // Why is this here? Isn't the whole project in Roboto already?
-// h2 {
-//   font-family: "Roboto";
-// }
+// Necessary when using a custom theme
+h2 {
+  font-family: "Roboto";
+}
 
 .title {
   text-align: center;

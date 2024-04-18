@@ -6,7 +6,14 @@
     <h3>Virtual Scrolling Demo</h3>
 
     <mat-list class="scrolling-container mat-elevation-z7">
-      <mat-list-item *ngFor="let item of items"> {{item}} </mat-list-item>
+      <!-- Standard Scrolling method -->
+      <!-- <mat-list-item *ngFor="let item of items"> {{item}} </mat-list-item> -->
+      
+      <!-- Virtual Scrolling -->
+      <cdk-virtual-scroll-viewport itemSize="48" class="scrolling-container">
+        <mat-list-item *cdkVirtualFor="let item of items">{{ item }}</mat-list-item>
+      </cdk-virtual-scroll-viewport>
+
     </mat-list>
 
   </div>
